@@ -1,3 +1,7 @@
+# VBShell - Perl-based backend server
+# Written by Lucas V. Araujo <lucas.vieira.ar@disroot.org>
+# More at https://github.com/lvmalware
+
 use strict;
 use warnings;
 use Term::ReadLine;

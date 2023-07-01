@@ -1,3 +1,7 @@
+' VBShell - VBScript agent
+' Written by Lucas V. Araujo <lucas.vieira.ar@disroot.org>
+' More at https://github.com/lvmalware
+
 On Error Resume Next
 
 agent = ""
