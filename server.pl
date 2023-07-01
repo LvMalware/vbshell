@@ -15,8 +15,6 @@ sub hex2str { join "", map { chr hex } shift =~ /.{2}/g }
 get '/stdin' => sub ($c) {
     my $name = $c->param('agent') || "?";
     my $user = hex2str($c->param('whoami') || "3f");
-    #print "${name}\[${user}\]\$ "; $| ++;
-    #chomp(my $cmd = <STDIN>);
     my $cmd = $term->readline("${name}\[${user}\]\$ ");
     $c->render(text => $cmd);
 };
